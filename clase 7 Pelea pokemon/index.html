@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://iili.io/3yV9jiG.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Poke pelea</title>
+</head>
+<body>
+    <h1 class="yoda">"De pokes pelea ser"</h1>
+    <div id="campo1" class="display">
+        <section>
+            <img id="poke1img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke1" class="pokesid"></input>
+            <p id ="atk1" class="stat">ATK: </p>
+            <p id ="def1" class="stat">DEF: </p>
+        </section>
+        <section>
+            <img id="poke2img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke2" class="pokesid"></input>
+            <p id ="atk2" class="stat">ATK: </p>
+            <p id ="def2" class="stat">DEF: </p>
+        </section>
+        <section>
+            <img id="poke3img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke3" class="pokesid"></input>
+            <p id ="atk3" class="stat">ATK: </p>
+            <p id ="def3" class="stat">DEF: </p>
+        </section>
+    </div>
+    <div id="medioCampo">
+        <div class="center">
+            <p>Dados equipo azul</p>
+            <p id="dado1">x</p>
+            <p id="dado2">x</p>
+        </div>
+        <div class="center">
+             <button id="btn1" onclick="tirarDados1()">Tirar dados equipo azul</button>
+        </div>
+        <div class="center">
+            <button id="btn3" onclick="comenzarPelea(dadosT,puntaje1,puntaje2)">Comenzar pelea</button>
+        </div>
+        <div class="center">
+             <button id="btn2" onclick="tirarDados2()">Tirar dados equipo rojo</button>
+        </div>
+        <div class="center">
+            <p>Dados equipo rojo</p>
+            <p id="dado3">x</p>
+            <p id="dado4">x</p>
+        </div>
+    </div>
+    <div id="campo2" class="display">
+        <section>
+            <img id="poke4img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke4" class="pokesid"></input>
+            <p id ="atk4" class="stat">ATK: </p>
+            <p id ="def4" class="stat">DEF: </p>
+        </section>
+        <section>
+            <img id="poke5img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke5" class="pokesid"></input>
+            <p id ="atk5" class="stat">ATK: </p>
+            <p id ="def5" class="stat">DEF: </p>
+        </section>
+        <section>
+            <img id="poke6img" src="https://iili.io/3yV9jiG.png">
+            <p class="noblock stat">ID</p>
+            <input id="poke6" class="pokesid"></input>
+            <p id ="atk6" class="stat">ATK: </p>
+            <p id ="def6" class="stat">DEF: </p>
+        </section>
+    </div>
+</body>
+<script src="js/fn.js"></script>
+</html>
+
+<!--
+sesionstrorage.setion(clave,valor);
+localstorage.setion(clave, valor);
+.getIteM(CLAVE);
+.getietm(clave);
+.removeitem(clave):
+-->

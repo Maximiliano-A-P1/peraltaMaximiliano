@@ -1,0 +1,30 @@
+body{
+    font-family: sans-serif;
+}
+#personas{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+input{
+    width: 30px;
+}
+.expo{
+    margin: auto;
+    width: 250px;
+    border: 2px solid black;
+    height: 354px;
+}
+.inline{
+    display: inline-block;
+}
+.mayor{
+    background-color: aquamarine;
+}
+img{
+    width: 128px;
+    height: 128px;
+}
+.cursiva{
+    font-style: italic;
+}

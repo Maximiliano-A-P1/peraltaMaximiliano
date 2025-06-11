@@ -1,0 +1,22 @@
+body{
+    background: linear-gradient(85deg, rgb(65, 0, 0),rgb(140, 0, 0));
+    font-family: sans-serif;
+}
+.uno{
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: rgba(0,0,0,0.65);
+    color: gold;
+    height: 80%;
+}
+.line{
+    text-decoration: underline;
+}
+.dos{
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+
