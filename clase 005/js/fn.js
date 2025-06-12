@@ -42,4 +42,6 @@ async function pelea(){
     if (atkpk1 === atkpk2) {
         ganador = 'Los pokemones empatan'
     }
+    let auxP = document.querySelector('#ganador')
+    auxP.textContent = ganador
 }
