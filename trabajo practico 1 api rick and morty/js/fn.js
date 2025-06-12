@@ -662,43 +662,119 @@ let personajes = [
       "created": "2017-11-04T22:34:53.659Z"
     }
   ]
+//console.log(personajes[0])
+
+//punto 1.1
 console.log('Tarea')
 console.log('Punto 1:')
 console.log('La cantidad de personajes que hay en la respuesta es: ',personajes.length,'.')
 let alive = 0
-for (i=0; i < personajes.length -1; i++) {
+
+//punto 1.2
+for (let i=0; i < personajes.length -1; i++) {
     if (personajes[i].status == "Alive") {
         alive++
     }
 }
 console.log('La cantidad que estan confirmados vivos son: ',alive,'.')
+
+//punto 2.1
 console.log('Punto 2:')
 let species = []
 let cd
 species[0] = personajes[0].species
-for (i=1; i < personajes.length -1; i++) {
+for (let i2=1; i2 < personajes.length; i2++) {
     cd = false
-    for (i2= 0; i2 < species.length; i2++) {
-        if (personajes[i].species == species[i2]) {
+    for (let i3= 0; i3 < species.length; i3++) {
+        if (personajes[i2].species === species[i3]) {
             cd = true
         }
     }
-    if (cd = false) {
-        species.push(personajes[i].species)
+    if (cd === false) {
+        species.push(personajes[i2].species)
     }
 }
 console.log('Hay ',species.length,'especies distintas.')
+
+// punto2.2
 let species2 = []
-let nsp 
-let csp = 0
-for (i=0; i < species.length -1; i++){
-    nsp = species[i]
-    species2.push({nsp, csp})
+let nombreSpecies 
+let cantidadSpecies = 0
+for (let i4=0; i4 < species.length ; i4++){
+    nombreSpecies  = species[i4]
+    species2.push({nombreSpecies , cantidadSpecies})
     } 
-for (i=0; i < personajes.length -1; i++) {
-    for (i2=0; i2 < species2.length -1; i++){
-        if (personajes[i].species == species2[i2].nsp) {
-            species2[i2].csp = species2[i2].csp++
+
+for (let i5=0; i5 < personajes.length ; i5++) {
+    for (i6=0; i6 < species2.length ; i6++){
+        if (personajes[i5].species === species2[i6].nombreSpecies ) {
+            species2[i6].cantidadSpecies++
         }
     }
+}
+
+for (let i7= 0; i7 < species2.length; i7++){
+  console.log('Hay '+species2[i7].cantidadSpecies+' '+species2[i7].nombreSpecies+'.')
+}
+
+//punto 3.1
+console.log('punto 3:')
+let mayorApariciones
+let mayorAparicionesAux = 0
+for (let i8= 0; i8 < personajes.length; i8++) {
+    if (mayorAparicionesAux < personajes[i8].episode.length){
+      mayorAparicionesAux = personajes[i8].episode.length
+      mayorApariciones = personajes[0].name
+    }
+}
+console.log('El personaje que aparecio en mas episodios fue '+ mayorApariciones+'.')
+
+
+//punto 3.2
+console.log('Aparecio en '+ mayorAparicionesAux +' episodios en total.')
+console.log('El punto pide su foto, pero este practico es de consola. el link para ver la foto seria:')
+console.log(personajes[0].image)
+
+//punto 4.1
+console.log('punto 4:')
+let masculinos = []
+let femeninos = []
+for (let i9 = 0; i9 < personajes.length; i9++){
+    if (personajes[i9].gender === 'Male') {
+      masculinos.push(personajes[i9].name)
+    } else {
+      femeninos.push(personajes[i9].name)
+    }
+}
+console.log('Persoanjes masculinos: ')
+for (let i10 = 0; i10 < masculinos.length; i10++){
+  console.log('- '+masculinos[i10])
+}
+console.log('Persoanjes femeninos: ')
+for (let i11 = 0; i11 < femeninos.length; i11++){
+  console.log('- '+femeninos[i11])
+}
+
+//punto 4.2
+console.log('Hay '+ masculinos.length +' personakes masculinos.')
+console.log('Hay '+ femeninos.length +' personakes femeninos.')
+
+//punto 5.1
+console.log('Punto 5:')
+let ubicacion
+console.log('Ingrese la ubicacion con la funcion: ubicacionF(xUbicacion)')
+console.log('ejemplo de ubicacion: Citadel of Ricks')
+function ubicacionF(xUbicacion){
+  ubicacion = xUbicacion
+  mostrarPersonajes(ubicacion)
+}
+
+//punto 5.2
+function mostrarPersonajes(ubicacion){
+  console.log('Los personajes que coinciden con esa ubicación son: ')
+  for (let i12 = 0; i12 < personajes.length; i12++) {
+    if (personajes[i12].location.name === ubicacion) {
+      console.log('- ' + personajes[i12].name)
+    } 
+  }
 }
