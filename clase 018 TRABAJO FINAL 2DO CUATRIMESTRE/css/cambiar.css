@@ -1,0 +1,34 @@
+#this{
+    background-color: black;
+    margin: -1vh;
+    margin-bottom: 4vh;
+    padding-left: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    color:white;
+    font-size: 4vh;
+}
+#cambiar{
+    background-color: aquamarine;
+    width: 25%;
+    margin: auto;
+    margin-top: 15vh;
+    padding: 2vh;
+    padding-top: 0.5vh;
+    font-size: 2.1vh;
+    border-radius: 10px;
+}
+.ligado{
+    margin-bottom: 0;
+}
+input{
+    width: 99%;
+    height: 3vh;
+    font-size: 2.5vh;
+}
+.block{
+    margin-top: 1vh;
+    display: block;
+    margin-left: 80%;
+    font-size: 2vh;
+}

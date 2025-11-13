@@ -1,0 +1,90 @@
+Programación 2
+Trabajo Final
+
+version del trabajo 3.1
+
+Profesor: Javier Parra
+
+Nombre del proyecto: Inventario simple
+Integrante: Maximiliano A. Peralta
+
+Descripción:
+Programa para gestionar un inventario, con usuario y registro de modificaciones.
+
+Objetivo:
+Permitir gestionar el inventario a través de agregar, modificarlo, ver su cantidad; registrar y dar de alta usuarios, y ver el registro de su modificación.
+
+Funciones: 
+F1 - Registro e inicio de sesión de cuentas. 
+F2 - Agregar y modificar ítems del inventario.
+F3 - Mostrar el registro de modificaciones.
+F4 - Mostrar los ítem del inventario.
+
+Especificación: 
+F1: A las cuentas solo se les puede cambiar la contraseña (estara encriptada), la id se asigna de manera automática.
+F2: La id no se puede modificar y se asigna de manera automática.
+F3: El registro no se puede modificar y todos sus datos son asignados de manera automática. 
+F4: Permitir buscar los items por clasificaciones en un buscador de opciones
+
+
+Diagrama EyR:
+usuarios(‘id_usuario’(PK),‘username’,’password’,’admin’,’permiso’);
+-ID-U: number, auto-incremental;
+-username: string;
+-password: string;
+-admin: boolean;
+-permiso: string;
+
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    admin BOOLEAN DEFAULT FALSE,
+    permiso VARCHAR(255)
+);
+
+Tipos de usuarios:
+Admin: viene de base, es la que habilita a las otras cuentas a poder editar el registro.
+Usuario: si tiene permiso puede modificar el inventario.
+
+productos(‘id_producto’(PK), ‘nombre_producto’,’precio_producto’,’cantidad_producto’,’en-venta’,'url_imagen',’clasificacion’);
+-id_producto: number, auto-incremental;
+-nombre_producto: string;
+-precio_producto: number;
+-cantidad_producto: number;
+-en_venta: boolean;
+-url-imagen: string;
+-clasificacion: string;
+-descripcion: string;
+
+CREATE TABLE productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_producto VARCHAR(255) NOT NULL,
+    precio_producto DECIMAL(10, 2) NOT NULL,
+    cantidad_producto INT NOT NULL,
+    en_venta VARCHAR(255),
+    url_imagen VARCHAR(255),
+    clasificacion VARCHAR(255),
+    descripcion VARCHAR(255)
+    );
+
+Modificaciones(‘id_modificacion’(PK),’id_usuario’,’id_producto’,’fecha_hora’);
+-id_modificacion: number, auto-incremental;
+-id_usuario: number;
+-id_producto: number;
+-fecha_hora: date;
+
+CREATE TABLE modificaciones (
+    id_modificacion INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_producto INT,
+    fecha_hora DATETIME
+);
+
+
+Tecnologías empleadas: 
+-Heidi SQL
+-XAMPP
+
+Repositorio: ‘link’ 
+Versión de documento: 2 - 12/09/2025 - 20:00

@@ -1,0 +1,33 @@
+body{
+    font-family: sans-serif;
+}
+#barratop{
+    background-color: black;
+    margin: -1.5vh;
+    margin-bottom: 20vh;
+    padding: 2vh;
+    font-size: 5vh;
+    color:white;
+}
+#crear{
+    background-color: aquamarine;
+    width: 25%;
+    margin: auto;
+    padding: 1vh;
+    font-size: 2.1vh;
+    border-radius: 10px;
+}
+.ligado{
+    margin-bottom: 0;
+}
+input{
+    width: 99%;
+    height: 3vh;
+    font-size: 2.5vh;
+}
+.block{
+    margin-top: 1vh;
+    display: block;
+    margin-left: 84.5%;
+    font-size: 2vh;
+}

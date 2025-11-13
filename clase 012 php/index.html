@@ -1,0 +1,72 @@
+<!-- 
+    Arrancamos con php
+
+    material PHP -> php.net /la ultima guia
+
+    front end -> pagina html, css, javascrip
+
+    back end -> 
+    vamos a utilizar base de datos relacional
+    mysql - puede ser mariaDB -> 
+    
+    php -v para saber si esta instalado(bajado-descargado, lo tenes en alguna parte del sistema y 
+    se interpretra) php en la maquina
+
+    otra forma de ejecutar php es utilizar aplicaciones que ya lo traigan:
+    xamp    (apache)
+    namp    (ngnix)
+    laragon () este lo vamos a usar ahora
+    herd
+
+    otra seria usar php -S localhost:8000
+    solo abrir un servidor.
+
+    te traen el paquete de cosas que vamos a necesitar, sql, server local, 
+    
+    meter todo en una carpeta formulario
+
+
+    para abrir el php 
+    consola de comando: php -S localhost:8000       (el 8000 es el nombre del puerto)
+
+    vamos al archivo index.php
+    ctrl + ñ (abre terminal de vscode)
+    cd '.\nombre carpeta\'
+    php -S localhost:8000
+
+
+    la buscar la pagina en navegador 
+    localhost:8000              tiene por defecto ir al archivo index
+    localhost:8000/x            para acceder a uno especifico. ej: localhost:8000/datos.php
+-->
+
+<!--
+    tarea: hacer un boton el cual mande datos a un servidor.
+    averiguar que tipo de datos maneja php.
+
+    php lenguaje debilmente sumado
+-->
+
+<!--
+    para declarar una variable en php 
+    $nombre = valor;
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="subirdatos">
+        <p>Name:</p>
+        <input type="text" id="dato1">
+        <p>Email:</p>
+        <input type="email" id="dato2">
+        <button type="submit" onclick="subir()" >Subir</button>
+    </div>
+</body>
+<script src="js/fn.js"></script>
+</html>

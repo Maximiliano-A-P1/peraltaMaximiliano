@@ -1,0 +1,86 @@
+body{
+    font-family: sans-serif;
+}
+#this{
+    background-color: black;
+    margin: -1vh;
+    margin-bottom: 4vh;
+    padding-left: 2vw;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color:white;
+    font-size: 4vh;
+}
+#buscar{
+    background-color: aquamarine;
+    padding: 30px;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border-radius: 15px;
+}
+.flex{
+    display: flex;
+}
+.left{
+    width: 45%;
+    padding-right: 2vw;
+}
+.ligado{
+    margin-bottom: 0;
+}
+.eleccion{
+    transform: scale(1.5);
+}
+#porId{
+    font-size: 2vh;
+    width: 8vw;
+}
+#porNom{
+    font-size: 2vh;
+    width: 49vw;
+}
+#permiso{
+    font-size: 2vh;
+    margin-top: 1vh;
+    margin-right: 0.5vw;
+}
+#btbuscar{
+    font-size: 2vh;
+    margin-top: 1vh;
+}
+#bts{
+    justify-content: space-between;
+}
+.buscado{
+    background-color: silver;
+    width: 94.5vw;
+    padding: 1vh;
+    margin-top: 1vh;
+}
+.usuExp{
+    background-color: silver;
+    width: 38vw;
+    margin-right: 1vw;
+    border-radius: 15px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.usuario{
+    justify-content: space-between;
+}
+.modExp{
+    background-color: aqua;
+    width: 56vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 15px;
+}
+.modificacion{
+    justify-content: space-between;
+}
+#eleccion{
+    font-size:2.1vh;
+}
+.inline{
+    display: inline;
+}
