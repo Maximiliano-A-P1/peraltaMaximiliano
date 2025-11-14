@@ -39,6 +39,13 @@ body{
     font-size: 2vh;
     width: 49vw;
 }
+.sorry{
+    background-color: silver;
+    padding: 1vh;
+    font-size: 2.5vh;
+    width: 94.5vw;
+    border-radius: 15px;
+}
 #permiso{
     font-size: 2vh;
     margin-top: 1vh;
@@ -56,6 +63,7 @@ body{
     width: 94.5vw;
     padding: 1vh;
     margin-top: 1vh;
+    border-radius: 15px;
 }
 .usuExp{
     background-color: silver;

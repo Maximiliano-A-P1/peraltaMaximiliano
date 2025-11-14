@@ -55,4 +55,5 @@ if ($form == 'eliminar'){
 
     $thisProducto->eliminarProducto($id_producto);
 }
+echo '<br><br><a href="editar.php">Volver</a>'
 ?>

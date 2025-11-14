@@ -50,8 +50,10 @@ echo '<script>let datos = ' . $datos . ';</script>';
                         <p class="ligado">Clasificacion:</p>
                         <select class="select1" required name="clasificacion">
                             <option value="cartas">cartas</option>
+                            <option value="electrodomesticos">electrodomesticos</option>
                             <option value="muebles">muebles</option>
-                        </select>
+                            <option value="panaderia">panaderia</option>
+                        </select>   
                     </div>
                     <div>
                         <p class="ligado">En venta:</p>
@@ -118,7 +120,9 @@ echo '<script>let datos = ' . $datos . ';</script>';
                         <p class="ligado">Clasificacion:</p>
                         <select class="select1" required name="clasificacion">
                             <option value="cartas">cartas</option>
+                            <option value="electrodomesticos">electrodomesticos</option>
                             <option value="muebles">muebles</option>
+                            <option value="panaderia">panaderia</option>
                         </select>
                     </div>
                     <div>

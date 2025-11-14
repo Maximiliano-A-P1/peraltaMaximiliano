@@ -37,8 +37,9 @@ echo '<script>let datos = ' . $datos . ';</script>';
   <div id="clasificaciones">
     <p>Selecciona una categoria</p>
     <button onclick="buscar('cartas')">Cartas</button>
+    <button onclick="buscar('electrodomesticos')">Electrodomesticos</button>
     <button onclick="buscar('muebles')">Muebles</button>
-    <button onclick="buscar()"></button>
+    <button onclick="buscar('panaderia')">Panaderia</button>
   </div>
   <div id="productos">
   </div>

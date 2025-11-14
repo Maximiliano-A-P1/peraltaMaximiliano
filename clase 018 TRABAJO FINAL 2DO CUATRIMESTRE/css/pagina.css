@@ -22,8 +22,8 @@ button{
     flex-wrap: wrap;
 }
 .producto{
-    width: 400px;
-    height: 350px;
+    width: 560px;
+    height: 450px;
     background-color: burlywood;
     padding-left: 20px;
     padding-top: 10px;
@@ -37,6 +37,8 @@ button{
 }
 .expo{
     display: flex;
+    height: 390px;
+    font-size: 2vh;
 }
 img{
     width: 200px;
@@ -48,7 +50,7 @@ data{
     height: 310px;
     margin-left: 20px;
     margin-right: 10px;
-    height: 380px;
+    height: 340px;
 }
 #contra{
     margin-top: -4vh;
