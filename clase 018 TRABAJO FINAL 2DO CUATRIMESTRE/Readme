@@ -1,6 +1,62 @@
 Programación 2
 Trabajo Final
 
+version del trabajo 3.1.1
+
+Agregacion de un srcip para crear todos los datos, tambien se agrego el manual con ejemplos que use para crear las consultas, junto con lo subido al aula.
+
+creacion de la cuenta usuario
+INSERT INTO usuarios (id_usuario, username, password, admin, permiso)
+VALUES (1, 'admin', '$2y$12$mXVPuPamTAPv35KcxRY87uMfzxa8aIMbCrG2fOOrWO/8e8su2onUu', 1, 'editor');
+
+usuario: admin
+contraseña: admin 
+
+
+
+agregacion de un script para crear todos los datos:
+
+
+CREATE TABLE usuarios (
+    id_usuario INT(11) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    admin BOOLEAN NOT NULL DEFAULT 0,
+    permiso VARCHAR(255) NOT NULL DEFAULT 'no'
+);
+
+CREATE TABLE productos (
+    id_producto INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre_producto VARCHAR(255) NOT NULL,
+    precio_producto DECIMAL(10,2) NOT NULL,
+    cantidad_producto INT(11) NOT NULL,
+    en_venta VARCHAR(50) NOT NULL,
+    url_imagen VARCHAR(255) NOT NULL,
+    clasificacion VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE modificaciones (
+    id_modificacion INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT(11) NOT NULL,
+    id_producto INT(11) NOT NULL,
+    fecha_hora DATETIME NOT NULL
+);
+
+INSERT INTO usuarios (id_usuario, username, password, admin, permiso)
+VALUES (1, 'admin', '$2y$12$mXVPuPamTAPv35KcxRY87uMfzxa8aIMbCrG2fOOrWO/8e8su2onUu', 1, 'editor');
+
+
+
+
+
+
+
+
+
+
+
+
 version del trabajo 3.1
 
 Profesor: Javier Parra
@@ -36,11 +92,11 @@ usuarios(‘id_usuario’(PK),‘username’,’password’,’admin’,’permi
 -permiso: string;
 
 CREATE TABLE usuarios (
-    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT(11) AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    admin BOOLEAN DEFAULT FALSE,
-    permiso VARCHAR(255)
+    admin BOOLEAN NOT NULL DEFAULT 0,
+    permiso VARCHAR(255) NOT NULL DEFAULT 'no'
 );
 
 Tipos de usuarios:
@@ -58,15 +114,15 @@ productos(‘id_producto’(PK), ‘nombre_producto’,’precio_producto’,’
 -descripcion: string;
 
 CREATE TABLE productos (
-    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT(11) AUTO_INCREMENT PRIMARY KEY,
     nombre_producto VARCHAR(255) NOT NULL,
-    precio_producto DECIMAL(10, 2) NOT NULL,
-    cantidad_producto INT NOT NULL,
-    en_venta VARCHAR(255),
-    url_imagen VARCHAR(255),
-    clasificacion VARCHAR(255),
-    descripcion VARCHAR(255)
-    );
+    precio_producto DECIMAL(10,2) NOT NULL,
+    cantidad_producto INT(11) NOT NULL,
+    en_venta VARCHAR(50) NOT NULL,
+    url_imagen VARCHAR(255) NOT NULL,
+    clasificacion VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(1000) NOT NULL
+);
 
 Modificaciones(‘id_modificacion’(PK),’id_usuario’,’id_producto’,’fecha_hora’);
 -id_modificacion: number, auto-incremental;
@@ -75,12 +131,11 @@ Modificaciones(‘id_modificacion’(PK),’id_usuario’,’id_producto’,’f
 -fecha_hora: date;
 
 CREATE TABLE modificaciones (
-    id_modificacion INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT,
-    id_producto INT,
-    fecha_hora DATETIME
+    id_modificacion INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT(11),
+    id_producto INT(11),
+    fecha_hora DATETIME NOT NULL
 );
-
 
 Tecnologías empleadas: 
 -Heidi SQL

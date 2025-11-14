@@ -1,0 +1,153 @@
+lo que le escribi yo a chat gpt
+
+estoy por hacer un programa para conectar con una base de datos local con php. Necesito un tutorial de la clase pdo completo de sus funciones. y dame ejemplos de como hacer todas las consultas (update, select, delete) en php.
+
+
+nota: utilice lo que subio al aula + esto para hacer las consutas.
+
+
+
+
+Lo que me devolvio 
+
+A continuación tienes una guía completa y clara sobre PDO (PHP Data Objects), la forma recomendada de trabajar con bases de datos en PHP. Incluye:
+
+✅ Explicación de la clase PDO
+✅ Manejo de errores
+✅ Uso de consultas preparadas
+✅ Ejemplos completos de SELECT, INSERT, UPDATE, DELETE
+✅ Conexión a base de datos local (MySQL)
+
+✅ 1. Conexión con PDO
+<?php
+$host = 'localhost';
+$dbname = 'mi_base';
+$username = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    // Opcional: activar modo excepciones
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Conexión correcta";
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
+}
+
+✅ 2. SELECT (Leer datos)
+🔹 SELECT simple (fetchAll)
+$stmt = $pdo->query("SELECT * FROM usuarios");
+$usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($usuarios as $usuario) {
+    echo $usuario['nombre'] . "<br>";
+}
+
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+$stmt->execute(['id' => 1]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+echo $usuario['nombre'];
+
+✅ 3. INSERT (Agregar registros)
+$sql = "INSERT INTO usuarios (nombre, email) VALUES (:nombre, :email)";
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    'nombre' => 'Juan Pérez',
+    'email'  => 'juan@example.com'
+]);
+
+echo "Usuario agregado con ID: " . $pdo->lastInsertId();
+
+
+✅ 4. UPDATE (Actualizar registros)
+$sql = "UPDATE usuarios SET email = :email WHERE id = :id";
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    'email' => 'nuevo_correo@example.com',
+    'id'    => 3
+]);
+
+echo "Filas afectadas: " . $stmt->rowCount();
+
+
+✅ 5. DELETE (Eliminar registros)
+$sql = "DELETE FROM usuarios WHERE id = :id";
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute(['id' => 5]);
+
+echo "Filas eliminadas: " . $stmt->rowCount();
+
+
+✅ 6. Funciones útiles de PDO
+Función	Descripción
+$pdo->prepare()	Prepara consulta segura con parámetros
+$pdo->query()	Ejecuta consulta directa sin parámetros
+$stmt->execute()	Ejecuta consulta preparada
+$stmt->fetch()	Obtiene un solo resultado
+$stmt->fetchAll()	Obtiene todos los resultados
+$stmt->rowCount()	Devuelve número de filas afectadas (UPDATE, DELETE)
+$pdo->lastInsertId()	Devuelve el último ID auto incrementado
+$pdo->beginTransaction()	Inicia transacción
+$pdo->commit()	Confirma transacción
+$pdo->rollBack()	Revierte transacción
+
+
+
+✅ 7. Manejo de transacciones
+try {
+    $pdo->beginTransaction();
+
+    $pdo->exec("UPDATE cuentas SET saldo = saldo - 100 WHERE id = 1");
+    $pdo->exec("UPDATE cuentas SET saldo = saldo + 100 WHERE id = 2");
+
+    $pdo->commit();
+    echo "Transacción exitosa";
+} catch (Exception $e) {
+    $pdo->rollBack();
+    echo "Error en transacción: " . $e->getMessage();
+}
+
+
+✅ 8. Modo de errores
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  // Lanza excepciones
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);    // Muestra warnings
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);     // Silencioso (por defecto)
+
+
+
+✅ 9. Obtener resultados como objetos
+$stmt = $pdo->query("SELECT * FROM usuarios");
+$stmt->setFetchMode(PDO::FETCH_OBJ);
+
+while ($u = $stmt->fetch()) {
+    echo $u->nombre . "<br>";
+}
+
+
+✅ 10. Validar si existe una fila
+$stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE email = :email");
+$stmt->execute(['email' => 'test@example.com']);
+$existe = $stmt->fetchColumn();
+
+if ($existe > 0) {
+    echo "El email ya está registrado";
+}
+
+
+
+Si quieres, puedo hacerte:
+
+✅ Un archivo PHP listo para copiar/pegar
+✅ Una clase Database.php que centralice la conexión
+✅ Ejemplos con mysqli vs pdo
+✅ Consultas con LIKE, JOIN, LIMIT, ORDER BY, etc.
+
+
+¿Quieres que continúe con código de ejemplo completo en un solo archivo o una clase PDO reutilizable?
+
+
+🔹 SELECT con parámetros preparados
